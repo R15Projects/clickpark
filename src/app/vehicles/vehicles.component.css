@@ -1,0 +1,33 @@
+.action-bar {
+    background-color: #408CFF !important;
+    color: white !important;
+}
+
+.btn {
+    background-color: #408CFF !important;
+}
+.mat-icon {
+    font-size: 25;
+    color: white;
+}
+
+:host-context(.ns-dark) .btn {
+    background-color: #408CFF !important;
+}
+
+.title {
+    font-size: 20;
+    color: white;
+}
+
+.span-mark {
+    font-weight: bold;
+}
+
+.template {
+    padding: 10;
+}
+
+.del-btn {
+    color: #408CFF;
+}

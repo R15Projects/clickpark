@@ -1,0 +1,38 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="auto, *, auto">
+        <label class="mat-icon btn" (tap)="back()" col="0" row="0" text="keyboard_backspace"></label>
+        <Label col="1" row="0" text="Lista de vehiculos" class="title" textWrap="true"></Label>
+        <label class="mat-icon btn" col="2" row="0" text="add" (tap)="addVehicle()"></label>
+    </GridLayout>
+</ActionBar>
+<GridLayout rows="auto,*">
+<SearchBar row="0" hint="Buscar vehiculo"
+      textFieldHintColor="whitesmoke"
+      (submit)="onSubmit($event)"
+      (textChange) = "onTextChange($event)"
+>
+</SearchBar>
+<RadListView [items]="listVehicles" row="1">
+    <ng-template let-item="item">
+        <GridLayout rows="auto" columns="auto, *, auto" class="template">
+            <Image src="res://caricon" width="20%" row="0" col="0"></Image>
+            <StackLayout row="0" col="1">
+                <label>
+                    <FormattedString>
+                        <span class="span-mark" text="Marca: "></span>
+                        <span text="{{item.marca}}"></span>
+                    </FormattedString>
+                </label>
+                <label>
+                    <FormattedString>
+                        <span class="span-mark" text="Matricula: "></span>
+                        <span text="{{item.matricula}}"></span>
+                    </FormattedString>
+                </label>
+            </StackLayout>
+<!--            <Label row="0" col="2" text="receipt_long" class="mat-icon del-btn" textWrap="true" (tap)="registerSanzion(item.id)"></Label>-->
+        </GridLayout>
+    </ng-template>
+</RadListView>
+</GridLayout>
+<ActivityIndicator [busy]="busy"></ActivityIndicator>

@@ -1,0 +1,46 @@
+.action-bar {
+    background-color: #408CFF  !important;
+}
+
+.btn-nav {
+    font-size: 25;
+    padding: 8;
+    color: white;
+}
+
+.btn-search {
+    color: #408CFF;
+    background-color: white;
+    font-size: 25;
+    padding: 8;
+    margin: 0;
+}
+
+TextField {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    background-color: rgb(221, 221, 221);
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+}
+
+:host-context(.ns-dark) TextField {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+    background-color: black !important;
+}
+
+
+.del-btn {
+    color: #408CFF !important;
+}
+
+
+.mat-icon {
+    font-size: 25;
+    padding: 10;
+}

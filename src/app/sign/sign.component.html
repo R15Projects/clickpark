@@ -1,0 +1,11 @@
+<StackLayout class="form">
+    <Image src="res://clickparklogo" width="90%" class="img-logo"></Image>
+    <GridLayout rows="auto,auto" class="txt-des" columns="*">
+        <Label row="0" col="0" text="CLICK - PARK VIGILANTES" class="txt-logo" textWrap="true"></Label>
+        <Label row="1" col="0" text="Gestión zona O.R.A" class="txt-logo-2" textWrap="true"></Label>
+    </GridLayout>
+    <TextField #correo returnKeyType="next" class="input" keyboardType="email" hint="Correo" [(ngModel)]="userRecord.correo"></TextField>
+    <TextField #placa returnKeyType="done" autocorrect="false" class="input" [(ngModel)]="userRecord.numeroplaca" hint="Número de placa"></TextField>
+    <CheckBox col="0" row="0" [checked]="recordUsPass" (checkedChange)="onCheckTerms($event)" text=" Recordar placa y correo"></CheckBox>
+    <Button class="btn-register" text="Iniciar Sesion" (tap)="sign()"></Button>
+</StackLayout>

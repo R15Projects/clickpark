@@ -1,0 +1,63 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="auto, *, auto">
+        <label (tap)="back()" col="0" row="0" class="btn">
+            <FormattedString>
+                <span  class="mat-icon" text="keyboard_backspace" style="color: white"></span>
+                <span class="title" text=" Formulario de sanzión"></span>
+            </FormattedString>
+        </label>
+    </GridLayout>
+</ActionBar>
+<ScrollView>
+    <StackLayout>
+
+        <StackLayout class="form-pos">
+            <Label text="Lugar" textWrap="true" class="lbl-form"></Label>
+            <TextField returnKeyType="next" [(ngModel)]="sanzion.via" hint="Vía"></TextField>
+            <TextField returnKeyType="next" [(ngModel)]="sanzion.lugar" hint="Nro."></TextField>
+        </StackLayout>
+        <StackLayout  class="form-pos">
+            <Label text="Hecho" textWrap="true" class="lbl-form"></Label>
+            <CheckBox checked="{{hechoOption == 'tiketOff' ? 'true' : 'false'}}" (tap)="onSelectChange('tiketOff','Carecer de Ticket')" boxType="circle" text="Carecer ticket" ></CheckBox>
+            <CheckBox checked="{{hechoOption == 'tiketAgo' ? 'true' : 'false'}}" (tap)="onSelectChange('tiketAgo','Tiempo de ticket agotado')" boxType="circle" text="Tiempo de ticket agotado"></CheckBox>
+        </StackLayout>
+        <GridLayout class="form-pos" rows="auto,auto" columns="*, *">
+            <Label row="0" col="0" colSpan="2" text="Datos del vehiculo" textWrap="true" class="lbl-form"></Label>
+            <TextField returnKeyType="next" row="1" col="0" [(ngModel)]="vehiculo.marca" hint="marca" editable= "true"></TextField>
+            <TextField returnKeyType="next" row="1" col="1" [(ngModel)]="vehiculo.matricula" hint="matricula" editable= "true"></TextField>
+        </GridLayout>
+        <button text="Cargar fotos del vehiculo" (tap)="takePicture()"></button>
+        <GridLayout rows="auto" columns="*,*,*">
+            <ng-container *ngFor="let item of list; let i = index">
+                <StackLayout row="0" col="{{i}}" *ngIf="list.length > 0" class="image-container">
+                    <Image src="{{item.src}}" width="100" height="100" stretch="aspectFill" (tap)="openImagePicker(i)"></Image>
+                </StackLayout>
+            </ng-container>
+        </GridLayout>
+        <!--<StackLayout class="form-pos">
+            <Label text="Datos del titular" textWrap="true" class="lbl-form"></Label>
+            <TextField [(ngModel)]="sanzion.titular.nombre" hint="Nombres y Apellidos"></TextField>
+            <TextField [(ngModel)]="sanzion.titular.domicilio" hint="domicilio, calle o Plaza"></TextField>
+            <TextField [(ngModel)]="sanzion.titular.localidad" hint="localidad y Provincia"></TextField>
+        </StackLayout>
+        <StackLayout class="form-pos">
+            <Label text="Datos del conductor" textWrap="true" class="lbl-form"></Label>
+            <TextField [(ngModel)]="sanzion.conductor.identificacion" hint="Numero del permiso o DNI"></TextField>
+            <TextField [(ngModel)]="sanzion.conductor.fechaNacimiento" hint="fecha de nacimiento" editable="false" (tap)="onDateChanged()" ></TextField>
+            <TextField [(ngModel)]="sanzion.conductor.clase" hint="Clase"></TextField>
+            <TextField [(ngModel)]="sanzion.conductor.nombre" hint="Apellidos y nombre"></TextField>
+            <TextField [(ngModel)]="sanzion.conductor.domicilio" hint="Domicilio, Calle o Plaza"></TextField>
+            <TextField [(ngModel)]="sanzion.conductor.localidad" hint="Localidad y Provincia"></TextField>
+        </StackLayout>-->
+        <StackLayout class="form-pos">
+            <Label text="Observaciones" textWrap="true" class="lbl-form"></Label>
+            <TextView returnKeyType="done" [(ngModel)]="sanzion.observaciones" maxLength="200" lineHeight="10" hint="Observaciones"></TextView>
+        </StackLayout>
+        <Label text="Revise a detalle la información que va a registrar." textWrap="true"></Label>
+        <GridLayout rows="auto" columns="*, auto">
+            <Button row="0" col="0" text="REGISTRAR SANZIÓN" (tap)="onSubmit()"></Button>
+            <Button row="0" col="1" text="print" class="mat-icon btn-print" nsRouterLink="/sanziones/printer"></Button>
+        </GridLayout>
+    </StackLayout>
+</ScrollView>
+

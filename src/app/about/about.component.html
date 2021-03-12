@@ -1,0 +1,19 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*" columns="auto, *, auto">
+        <label class="btn-nav" col="0" row="0" (tap)="onBack()" >
+            <FormattedString>
+                <span class="mat-icon" text="keyboard_backspace"></span>
+                <span text=" About"></span>
+            </FormattedString>
+        </label>
+        <!--<label class="mat-icon btn-nav" col="2" row="0" text="settings"></label>-->
+    </GridLayout>
+</ActionBar>
+<StackLayout class="container">
+    <Label text="Preguntas frecuentes" textWrap="true"></Label>
+    <Button text="¿Formato de sanciónes?" ></Button>
+    <Button text="¿Que son los hechos?" ></Button>
+    <Button text="¿Que son los titulares?" ></Button>
+    <Button text="¿Porque se aplica un sanción?" ></Button>
+</StackLayout>
+

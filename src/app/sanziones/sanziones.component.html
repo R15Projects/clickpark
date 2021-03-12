@@ -1,0 +1,49 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*, " columns="auto, *, auto">
+        <label class="btn-nav" col="0" row="0"
+               (tap)="onBack()">
+            <FormattedString>
+                <span class="mat-icon btn-nav" text="keyboard_backspace"></span>
+                <span  text=" Sanziones"></span>
+            </FormattedString>
+        </label>
+        <Label row="0" col="2" text="add" class="mat-icon btn-nav" nsRouterLink="/sanziones/register" textWrap="true"></Label>
+    </GridLayout>
+</ActionBar>
+<GridLayout rows="auto,*" columns="*">
+    <SearchBar row="0" hint="Buscar sanción por matricula, vía, marca"
+               textFieldHintColor="whitesmoke"
+               (submit)="onSubmit($event)"
+               (textChange) = "onTextChange($event)"
+    >
+    </SearchBar>
+    <RadListView row="1" [items]="listSanzion">
+        <ng-template let-item="item">
+            <GridLayout rows="auto" columns="auto, *, auto">
+                <Label row="0" col="0" text="receipt_long" class="mat-icon del-btn" textWrap="true"></Label>
+                <StackLayout row="0" col="1">
+                    <Label textWrap="true">
+                        <FormattedString>
+                            <span text="Lugar:" style="font-weight: bold;"></span>
+                            <span text="  Vía:{{item.via}} Nro. {{item.lugar}}"></span>
+                        </FormattedString>
+                    </Label>
+                    <Label textWrap="true">
+                        <FormattedString>
+                            <span text="Marca:" style="font-weight: bold;"></span>
+                            <span text=" {{item.vehiculo.marca}}"></span>
+                        </FormattedString>
+                    </Label>
+                    <Label textWrap="true">
+                        <FormattedString>
+                            <span text="Matricula:" style="font-weight: bold;"></span>
+                            <span text=" {{item.vehiculo.matricula}}"></span>
+                        </FormattedString>
+                    </Label>
+                </StackLayout>
+                <Label row="0" col="2" text="print" class="mat-icon del-btn" textWrap="true"></Label>
+            </GridLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>
+<ActivityIndicator [busy]="busy"></ActivityIndicator>

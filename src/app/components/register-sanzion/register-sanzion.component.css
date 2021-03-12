@@ -1,0 +1,53 @@
+.action-bar {
+    background-color: #408CFF !important;
+    color: white !important;
+}
+
+.btn {
+    background-color: #408CFF !important;
+}
+.mat-icon {
+    font-size: 20;
+}
+
+:host-context(.ns-dark) .btn {
+    background-color: #408CFF !important;
+}
+
+.title {
+    font-size: 20;
+    color: white;
+}
+
+TextField, TextView {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    background-color: rgb(221, 221, 221);
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+}
+
+:host-context(.ns-dark) TextField, :host-context(.ns-dark) TextView {
+    border-width: 0 0 0 0;
+    font-size: 15;
+    padding: 10;
+    placeholder-color: dimgray;
+    border-radius: 5;
+    background-color: black !important;
+}
+
+Label, CheckBox {
+    padding-left: 15;
+}
+
+.lbl-form {
+    font-size: 18;
+    font-weight: bold;
+}
+
+.form-pos {
+    margin-top: 10;
+}
+
+

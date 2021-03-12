@@ -1,0 +1,16 @@
+<ActionBar class="action-bar">
+    <GridLayout rows="*, " columns="auto, *, auto">
+        <label col="0" row="0"
+               (tap)="onBack()" class="btn">
+            <FormattedString>
+                <span class="mat-icon btn-nav" text="keyboard_backspace"></span>
+                <span class="btn-nav" text=" Imprimir"></span>
+            </FormattedString>
+        </label>
+    </GridLayout>
+</ActionBar>
+<StackLayout>
+    <button text="buscar impresoras" (tap)="searchPrinter()"></button>
+</StackLayout>
+
+
