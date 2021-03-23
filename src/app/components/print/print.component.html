@@ -9,8 +9,17 @@
         </label>
     </GridLayout>
 </ActionBar>
-<StackLayout>
-    <button text="buscar impresoras" (tap)="searchPrinter()"></button>
-</StackLayout>
+<GridLayout rows="auto, *" columns="*">
+    <button row="0" text="Dispositivos Conectados" (tap)="searchPrinter()"></button>
+    <RadListView row="1" [items]="list">
+        <ng-template let-item="item">
+            <StackLayout>
+                <Label text="Nombre:  {{item.printName}}" textWrap="true"></Label>
+                <Label text="Address: {{item.printAddress}}" textWrap="true"></Label>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>
+
 
 

@@ -38,6 +38,7 @@
     "@nstudio/nativescript-rad-imagepicker": "^2.0.5",
     "nativescript-hprt": "^0.9.7",
     "nativescript-permissions": "^1.3.11",
+    "nativescript-print-mustek": "file:mustek-plugin-ns",
     "nativescript-ui-listview": "^9.1.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.6.0",

@@ -10,6 +10,7 @@ import {RegisterSanzionComponent} from "./register-sanzion/register-sanzion.comp
 import {TNSCheckBoxModule} from "@nstudio/nativescript-checkbox/angular";
 import {SelectDatepickerComponent} from "./select-datepicke/select-datepicker.component";
 import {printComponent} from "./print/print.component";
+import {NativeScriptUIListViewModule} from "nativescript-ui-listview/angular";
 
 @NgModule({
     schemas: [
@@ -20,7 +21,8 @@ import {printComponent} from "./print/print.component";
         NativeScriptFormsModule,
         NativeScriptHttpClientModule,
         TNSCheckBoxModule,
-        NativeScriptRouterModule
+        NativeScriptRouterModule,
+        NativeScriptUIListViewModule
     ],
     declarations: [
         RegisterVehicleComponent,

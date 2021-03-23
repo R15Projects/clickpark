@@ -1,6 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {PrinterService} from "../../../services/app-settings/printer.service";
 import {RouterExtensions} from "@nativescript/angular";
+import {printModel} from "../../../models/print/print.model";
+import {ObservableArray} from "@nativescript/core";
 
 @Component({
     selector: "printer",
@@ -9,8 +11,10 @@ import {RouterExtensions} from "@nativescript/angular";
 })
 export class printComponent implements OnInit {
 
+    list = new ObservableArray<printModel>();
     constructor(
-        private router:RouterExtensions
+        private router:RouterExtensions,
+        private printService: PrinterService
     ) {
     }
 
@@ -23,6 +27,8 @@ export class printComponent implements OnInit {
     }
 
 
-    async searchPrinter() {
+   async searchPrinter() {
+       this.list = new ObservableArray<printModel>();
+       this.list.push(await this.printService.searchAparedDispositives());
     }
 }
